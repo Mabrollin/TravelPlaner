@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="515.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="sl.light.gui.NewRouteDialogController">
+    <stylesheets>
+        <URL value="@newroutedialog.css" />
+    </stylesheets>
+   <children>
+      <Button fx:id="okButton" layoutX="231.0" layoutY="361.0" mnemonicParsing="false" text="OK" />
+      <TextArea fx:id="departures" layoutX="33.0" layoutY="80.0" prefHeight="269.0" prefWidth="198.0" text="00:00&#10;00:00+15*7&#10;00:00+15-&gt;12:00" />
+      <Text layoutX="176.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Route schedule">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <TextArea fx:id="arrivals" layoutX="283.0" layoutY="80.0" prefHeight="269.0" prefWidth="198.0" text="00:20&#10;00:20&#10;00:20" />
+      <Text layoutX="95.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Departures" />
+      <Text layoutX="363.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Arrivals" />
+   </children>
+</AnchorPane>

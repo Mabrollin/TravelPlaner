@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="mainAnchor" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sl.light.gui.FXMLDocumentController">
+    <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Save" />
+                  <MenuItem mnemonicParsing="false" text="Load" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Add">
+            <items>
+              <MenuItem fx:id="addStationMenuItem" mnemonicParsing="false" onAction="#enterAddStationMode" text="Station (s)" />
+                  <MenuItem fx:id="addRouteMenuItem" mnemonicParsing="false" onAction="#enterAddRouteMode" text="Route (r)" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Show">
+            <items>
+                  <Menu mnemonicParsing="false" text="Stops">
+                    <items>
+                        <RadioMenuItem mnemonicParsing="false" text="Name" />
+                        <RadioMenuItem mnemonicParsing="false" text="Coordinates" />
+                        <RadioMenuItem mnemonicParsing="false" text="Schedule" />
+                    </items>
+                  </Menu>
+                  <RadioMenuItem mnemonicParsing="false" text="Travel Planer" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Pane fx:id="planerPane" layoutX="900.0" layoutY="50.0" prefHeight="750.0" prefWidth="300.0" style="-fx-background-color: lightblue;">
+         <children>
+            <ComboBox fx:id="destinationComboBox" layoutX="78.0" layoutY="147.0" prefHeight="25.0" prefWidth="178.0" />
+            <ComboBox fx:id="departureComboBox" layoutX="78.0" layoutY="93.0" prefHeight="25.0" prefWidth="178.0" />
+            <Label layoutX="17.0" layoutY="146.0" prefHeight="13.0" prefWidth="24.0" text="To:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="16.0" layoutY="92.0" text="From:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Slider fx:id="hourSlider" layoutX="29.0" layoutY="222.0" majorTickUnit="12.0" max="23.0" orientation="VERTICAL" showTickLabels="true" showTickMarks="true" />
+            <Slider fx:id="minuteSlider" layoutX="70.0" layoutY="222.0" majorTickUnit="10.0" max="59.0" orientation="VERTICAL" showTickLabels="true" />
+            <Separator layoutX="1.0" layoutY="208.0" prefHeight="3.0" prefWidth="300.0" />
+            <ToggleButton fx:id="toggleButton" layoutX="134.0" layoutY="222.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="122.0" text="Departure">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </ToggleButton>
+            <TextField fx:id="timeField" editable="false" layoutX="134.0" layoutY="292.0" prefHeight="57.0" prefWidth="122.0" text="00:00">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </TextField>
+            <Text layoutX="85.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Travel Planer">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Separator layoutX="1.0" layoutY="422.0" prefHeight="3.0" prefWidth="300.0" />
+            <Button fx:id="getTripButton" layoutX="38.0" layoutY="381.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="225.0" text="Get Trip">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <TextArea fx:id="tripSuggestionField" editable="false" layoutX="26.0" layoutY="439.0" prefHeight="288.0" prefWidth="249.0" />
+         </children>
+      </Pane>
+      <Pane fx:id="mapPane" layoutY="50.0" prefHeight="750.0" prefWidth="900.0" style="-fx-background-color: green;" />
+    </children>
+</AnchorPane>
